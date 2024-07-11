@@ -32,6 +32,13 @@ jobs:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
+    - name: Assume role
+      id : assume-role
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/CDKDeploymentRole
+        aws-region: ${{ secrets.AWS_REGION }}
+
     - name: Deploy CDK stack
       run: cdk deploy --require-approval never
       env:
