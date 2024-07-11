@@ -36,7 +36,7 @@ jobs:
       id : assume-role
       uses: aws-actions/configure-aws-credentials@v1
       with:
-        role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/CDKDeploymentRole
+        role-to-assume: arn:aws:iam::815348399422:role/CDKDeploymentRole
         aws-region: ${{ secrets.AWS_REGION }}
 
     - name: Deploy CDK stack
