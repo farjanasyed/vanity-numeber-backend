@@ -5,7 +5,7 @@ import { VanityNumbersBackendStack } from '../src/vanity-numbers-backend-stack';
 
 const app = new cdk.App();
 const AWS_REGION = 'us-east-1';
-const AWS_SANDBOX_ACCOUNT = '815348399422';
+const AWS_SANDBOX_ACCOUNT = '637423167069';
 
 new VanityNumbersBackendStack(app, 'VanityNumbersBackendStack-prod',{
   env: { region: AWS_REGION, account: AWS_SANDBOX_ACCOUNT },
